@@ -1,0 +1,50 @@
+/** SECTION footer**/
+
+.footer {
+  padding-top: 40px;
+  background: url(noise_lines_transparent@2X.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%)
+      #211f20;
+}
+.footer-left,
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 33.4%;
+
+  color: var(--color-light-xl);
+}
+
+.footer-title {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-light-xl);
+}
+
+.footer-contacts {
+}
+
+.contact-img a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+.contact-img-center a {
+  gap: 19px;
+}
+
+.footer-contacts h4 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+}

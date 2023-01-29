@@ -1,0 +1,43 @@
+/** SECTION about  **/
+
+.about {
+  padding: 80px 175px 100px;
+}
+.about-left-side {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin-top: -5px;
+}
+.about-right-side {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  margin-top: -5px;
+}
+
+.about-right-side h3 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+.about-right-side p {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-xl);
+}
+.about-text {
+  margin-top: 25px;
+}

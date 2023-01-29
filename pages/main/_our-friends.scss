@@ -1,0 +1,142 @@
+/** SECTION our-friends **/
+
+.our-friends {
+  padding: 80px 0 100px;
+  background-color: var(--color-light-l);
+}
+
+.our-friends-title {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.our-friends-title h3 {
+  width: 400px;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+
+  text-align: center;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+.pets-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pets-btn-left,
+.pets-btn-right {
+  width: 52px;
+  height: 52px;
+  background: #cf1f1f00;
+  border: 2px solid var(--color-accent);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.pets-btn-left:hover {
+  border: 2px solid #fddcc4;
+  background: #fddcc4;
+  cursor: pointer;
+}
+.pets-btn-right:hover {
+  border: 2px solid #fddcc4;
+  background: #fddcc4;
+  cursor: pointer;
+}
+
+.pets-btn-left img,
+.pets-btn-right img {
+  width: 52px;
+  height: 6px;
+}
+
+.card {
+  // width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 29px;
+  border-radius: 9px;
+  align-items: center;
+  padding-bottom: 30px;
+  /* margin-bottom: 73px; */
+  background-color: var(--color-light-s);
+  cursor: pointer;
+  margin: 0 45px;
+
+  // border: 1px solid green;
+}
+.card:first-child {
+  margin-left: 0px;
+}
+.card:last-child {
+  margin-right: 0px;
+}
+
+.card-img {
+  width: 270px;
+  height: 270px;
+  border-radius: 9px 9px 0px 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-img img {
+  height: 100%;
+}
+
+.title-name-pets p {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.btn-white {
+  width: 187px;
+  background: var(--color-light-s);
+  border: 2px solid var(--color-accent);
+  border-radius: 100px;
+  color: var(--color-dark-3xl);
+}
+.pets-content {
+  margin-bottom: 60px;
+}
+.btn-long {
+  display: flex;
+  width: 260px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.card:hover > .learn_more {
+  background-color: var(--color-accent-light);
+  border: 2px solid var(--color-accent-light);
+  cursor: pointer;
+  color: #292929;
+}
+.card:hover .btn-white {
+  background-color: #fddcc4;
+  cursor: pointer;
+  border: 2px solid #fddcc4;
+}
