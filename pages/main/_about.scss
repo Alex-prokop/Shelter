@@ -3,6 +3,14 @@
 .about {
   padding: 80px 175px 100px;
 }
+.wrapper-about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
 .about-left-side {
   display: block;
   justify-content: center;
@@ -40,4 +48,14 @@
 }
 .about-text {
   margin-top: 25px;
+}
+@media (max-width: 1279px) and (min-width: 768px) {
+  .about {
+    padding: 80px 0px 97px;
+  }
+  .about-left-side {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 767px) {
 }

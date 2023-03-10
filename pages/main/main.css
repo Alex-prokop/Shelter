@@ -40,7 +40,20 @@ html {
   --color-accent-light: #fddcc4;
 }
 
-/** SECTION header **/
+@media (max-width: 1279px) and (min-width: 768px) {
+  .container {
+    padding: 0px 30px;
+  }
+  .wrapper {
+    min-width: 708px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 767px;
+  }
+}
+/** SECTION header**/
 .header {
   padding-top: 60px;
   position: absolute;
@@ -102,17 +115,20 @@ html {
   padding-bottom: 10px;
 }
 
-.navigation-list-item a.active::after {
-  content: "";
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  display: block;
-  width: 114px;
-  height: 3px;
-  background: var(--color-accent);
+.navigation .active {
+  color: var(--color-light-s);
+  display: flex;
+  border-bottom: 1px solid var(--color-accent);
 }
 
+@media (max-width: 1279px) and (min-width: 768px) {
+  .header {
+    padding-top: 30px;
+  }
+  .navigation-list-item {
+    margin-right: 36px;
+  }
+}
 /** SECTION not-only **/
 .not-only {
   padding-top: 180px;
@@ -175,9 +191,42 @@ html {
   color: var(--color-dark-3xl);
 }
 
+.not-only-img img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .not-only {
+    padding-top: 150px;
+  }
+  .btn {
+    margin: 0 auto;
+  }
+  .not-only-img {
+    width: 81%;
+  }
+  .not-only-left-side {
+    margin: 0 auto;
+  }
+  .not-only-right-side {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    padding-top: 102px;
+  }
+}
 /** SECTION about  **/
 .about {
   padding: 80px 175px 100px;
+}
+
+.wrapper-about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
 .about-left-side {
@@ -220,6 +269,14 @@ html {
   margin-top: 25px;
 }
 
+@media (max-width: 1279px) and (min-width: 768px) {
+  .about {
+    padding: 80px 0px 97px;
+  }
+  .about-left-side {
+    margin-top: 80px;
+  }
+}
 /** SECTION our-friends **/
 .our-friends {
   padding: 80px 0 100px;
@@ -280,6 +337,7 @@ html {
 }
 
 .card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 29px;
@@ -511,6 +569,8 @@ html {
 
 /** SECTION footer**/
 .footer {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 40px;
   background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%) #211f20;
 }
@@ -520,7 +580,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 33.4%;
   color: var(--color-light-xl);
 }
 

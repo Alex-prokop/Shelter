@@ -62,3 +62,30 @@
 
 .not-only-right-side {
 }
+.not-only-img img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .not-only {
+    padding-top: 150px;
+  }
+  .btn {
+    margin: 0 auto;
+  }
+  .not-only-img {
+    width: 81%;
+  }
+  .not-only-left-side {
+    margin: 0 auto;
+  }
+  .not-only-right-side {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    padding-top: 102px;
+  }
+}
+@media (max-width: 767px) {
+}

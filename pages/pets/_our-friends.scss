@@ -7,7 +7,6 @@
 
 .our-friends-title {
   display: flex;
-  // flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 60px;
 }
@@ -25,11 +24,28 @@
   letter-spacing: 0.06em;
   color: var(--color-dark-l);
 }
-
+/*______
+____________________ */
 .pets-content {
+  width: 1200px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 31px;
+  column-gap: 40px;
+  // position: absolute;
+  left: 0px;
+  top: 0;
+  // width: 1200px;
+  // margin: 0 auto;
+  // margin-bottom: 35px;
 }
 
 .pets-btn-left,
@@ -59,7 +75,7 @@
 }
 
 .card {
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -70,7 +86,6 @@
   /* margin-bottom: 73px; */
   background-color: var(--color-light-s);
   cursor: pointer;
-  margin: 0 45px;
 
   // border: 1px solid green;
 }
@@ -116,13 +131,45 @@
 .pets-content {
   margin-bottom: 60px;
 }
-.btn-long {
+.pets-buttons {
+  margin-top: 0px;
   display: flex;
-  width: 260px;
+  position: relative;
+  bottom: 0;
+  gap: 20px;
+}
+
+button {
+  width: 52px;
   height: 52px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  background: transparent;
+  font: normal 400 20px/1.15em Georgia;
+  letter-spacing: 0.06em;
+  color: #545454;
+  cursor: pointer;
+}
+
+.double-left {
+  color: #cdcdcd;
+  border: 2px solid #cdcdcd;
+  cursor: default;
+  background-color: transparent;
+}
+.btn-left {
+  color: #cdcdcd;
+  border: 2px solid #cdcdcd;
+  cursor: default;
+  background-color: transparent;
+}
+.number {
+  background-color: #f1cdb3;
+  cursor: default;
+}
+.btn-right {
+}
+.double-right {
 }
 
 .card:hover {

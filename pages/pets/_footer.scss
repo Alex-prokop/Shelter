@@ -1,8 +1,6 @@
 /** SECTION footer**/
 
 .footer {
-  display: flex;
-  flex-wrap: wrap;
   padding-top: 40px;
   background: url(noise_lines_transparent@2X.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%)
@@ -13,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // max-width: 33.4%;
+  max-width: 33.4%;
 
   color: var(--color-light-xl);
 }
