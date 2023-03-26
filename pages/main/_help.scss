@@ -28,7 +28,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* max-width: 85.4%; */
   row-gap: 55px;
   column-gap: 119px;
 }
@@ -42,11 +41,13 @@
 .card-help-img {
   display: flex;
   align-items: center;
-  width: 60px;
-  height: 60px;
   margin-bottom: 30px;
 }
 
+.card-help-img img {
+  width: 60px;
+  height: 60px;
+}
 .help-card-title h4 {
   font-family: 'Georgia';
   font-style: normal;
@@ -58,4 +59,48 @@
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+}
+@media (max-width: 1279px) and (min-width: 768px) {
+  .card-wrapper {
+    margin: 0 auto;
+    max-width: 630px;
+    justify-content: space-between;
+    column-gap: 60px;
+    row-gap: 55px;
+  }
+  .card-help {
+    width: 170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .help {
+    padding: 40px 0 42px;
+  }
+  .card-wrapper {
+    justify-content: flex-start;
+    margin-left: 5px;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .help-title {
+    margin-bottom: 40px;
+  }
+  .help-title h3 {
+    font-size: 25px;
+  }
+
+  .card-help {
+    width: 130px;
+  }
+  .card-help-img {
+    margin-bottom: 20px;
+  }
+  .card-help-img img {
+    width: 50px;
+    height: 50px;
+  }
+  .help-card-title h4 {
+    font-size: 15px;
+  }
 }

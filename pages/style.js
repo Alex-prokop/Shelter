@@ -172,6 +172,73 @@ function addCard(arr) {
     petsSliderContainer.append(petsCard);
   }
 }
+
+// slider
+
+let petsBtnLeft = document.querySelector('.pets-btn-left');
+let petsBtnRight = document.querySelector('.pets-btn-right');
+
+let currentIndex = 0;
+let prevIndex = null;
+let slideCount = 3;
+
+let selectedPets = [];
+let selectedIndexes = [];
+let newPets = [];
+
+function generateCards() {
+  while (selectedPets.length < slideCount) {
+    const randomIndex = Math.floor(Math.random() * pets.length);
+    const randomPet = pets[randomIndex];
+    if (
+      !selectedPets.includes(randomPet) &&
+      !selectedIndexes.includes(randomIndex)
+    ) {
+      selectedPets.push(randomPet);
+      selectedIndexes.push(randomIndex);
+    }
+  }
+  while (newPets.length < slideCount) {
+    const randomPet = pets[Math.floor(Math.random() * pets.length)];
+    if (!selectedPets.includes(randomPet) && !newPets.includes(randomPet)) {
+      newPets.push(randomPet);
+    }
+  }
+  addCard(selectedPets);
+}
+
+generateCards();
+
+petsBtnRight.addEventListener('click', function () {
+  selectedPets = newPets;
+  newPets = [];
+  slideLeft();
+});
+
+petsBtnLeft.addEventListener('click', function () {
+  selectedPets = newPets;
+  newPets = [];
+  slideRight();
+});
+
+function slideLeft() {
+  document
+    .querySelectorAll('.pets-card')
+    .forEach((card) => card.classList.add('slide-left'));
+
+  setTimeout(function () {
+    generateCards();
+  }, 300);
+}
+
+function slideRight() {
+  document
+    .querySelectorAll('.pets-card')
+    .forEach((card) => card.classList.add('slide-right'));
+  setTimeout(function () {
+    generateCards();
+  }, 300);
+}
 //_________________________pogination_______________
 let petsPerPage = {
   1280: 8,
@@ -211,8 +278,8 @@ for (let i = 0; i < totalPage; i++) {
 }
 
 function createPagination(currentPage, totalPage) {
-  let numberPage = document.querySelector('.number-page');
-  numberPage.innerText = currentPage;
+  let activeBtn = document.querySelector('.number-page');
+  activeBtn.innerText = currentPage;
 
   let btnStart = document.querySelector('.double-left');
   let btnPrev = document.querySelector('.btn-left');

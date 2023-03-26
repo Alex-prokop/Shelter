@@ -1,7 +1,7 @@
 /** SECTION our-friends **/
 
 .our-friends {
-  padding: 80px 0 100px;
+  padding: 110px 0 100px;
   background-color: var(--color-light-l);
 }
 
@@ -26,13 +26,28 @@
 }
 /*______
 ____________________ */
+.pets-slider {
+  display: flex;
+  margin-bottom: 42px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.pets-slider-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 40px;
+  row-gap: 26px;
+}
+
 .pets-content {
   width: 1200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  gap: 30px;
+  gap: 18px;
 }
 
 .card-content {
@@ -40,60 +55,24 @@ ____________________ */
   flex-wrap: wrap;
   row-gap: 31px;
   column-gap: 40px;
-  // position: absolute;
   left: 0px;
   top: 0;
-  // width: 1200px;
-  // margin: 0 auto;
-  // margin-bottom: 35px;
 }
 
-.pets-btn-left,
-.pets-btn-right {
-  width: 52px;
-  height: 52px;
-  background: #cf1f1f00;
-  border: 2px solid var(--color-accent);
-  border-radius: 100px;
-  cursor: pointer;
-}
-.pets-btn-left:hover {
-  border: 2px solid #fddcc4;
-  background: #fddcc4;
-  cursor: pointer;
-}
-.pets-btn-right:hover {
-  border: 2px solid #fddcc4;
-  background: #fddcc4;
-  cursor: pointer;
-}
-
-.pets-btn-left img,
-.pets-btn-right img {
-  width: 52px;
-  height: 6px;
-}
-
-.card {
-  // width: 100%;
+.pets-card {
+  max-width: 270px;
+  height: 435px;
   display: flex;
   flex-direction: column;
-
+  justify-content: space-between;
   gap: 29px;
   border-radius: 9px;
   align-items: center;
   padding-bottom: 30px;
-  /* margin-bottom: 73px; */
+
   background-color: var(--color-light-s);
   cursor: pointer;
-
-  // border: 1px solid green;
-}
-.card:first-child {
-  margin-left: 0px;
-}
-.card:last-child {
-  margin-right: 0px;
+  margin: 0 auto;
 }
 
 .card-img {
@@ -128,9 +107,7 @@ ____________________ */
   border-radius: 100px;
   color: var(--color-dark-3xl);
 }
-.pets-content {
-  margin-bottom: 60px;
-}
+
 .pets-buttons {
   margin-top: 0px;
   display: flex;
@@ -138,40 +115,43 @@ ____________________ */
   bottom: 0;
   gap: 20px;
 }
-
-button {
+.pagination {
+  margin: 0 auto;
+  display: flex;
+  column-gap: 20px;
+}
+.button-pagination {
   width: 52px;
   height: 52px;
   border-radius: 100px;
-  border: 2px solid #f1cdb3;
-  background: transparent;
+  border: 2px solid var(--color-accent);
+  // background: transparent;
   font: normal 400 20px/1.15em Georgia;
   letter-spacing: 0.06em;
-  color: #545454;
+  color: --color-dark-l;
   cursor: pointer;
 }
 
 .double-left {
-  color: #cdcdcd;
-  border: 2px solid #cdcdcd;
+  color: var(--color-dark-s);
+  border: 2px solid var(--color-dark-s);
   cursor: default;
-  background-color: transparent;
 }
 .btn-left {
-  color: #cdcdcd;
-  border: 2px solid #cdcdcd;
-  cursor: default;
-  background-color: transparent;
-}
-.number {
-  background-color: #f1cdb3;
+  color: var(--color-dark-s);
+  border: 2px solid var(--color-dark-s);
   cursor: default;
 }
-.btn-right {
-}
-.double-right {
+.number-page {
+  background-color: var(--color-accent);
+  cursor: default;
 }
 
+.button-pagination:hover {
+  border: 2px solid var(--color-accent-light);
+  background: var(--color-accent-light);
+  cursor: pointer;
+}
 .card:hover {
   cursor: pointer;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -180,10 +160,57 @@ button {
   background-color: var(--color-accent-light);
   border: 2px solid var(--color-accent-light);
   cursor: pointer;
-  color: #292929;
+  color: var(--color-dark-3xl);
 }
 .card:hover .btn-white {
-  background-color: #fddcc4;
+  background-color: var(--color-accent-light);
   cursor: pointer;
-  border: 2px solid #fddcc4;
+  border: 2px solid var(--color-accent-light);
+}
+@media (max-width: 1279px) and (min-width: 768px) {
+  .our-friends {
+    padding: 110px 0 72px;
+  }
+  .our-friends-title {
+    margin-bottom: 30px;
+  }
+  .pets-slider {
+    margin-bottom: 45px;
+  }
+  .pets-content {
+    gap: 0px;
+  }
+  .pets-slider-container {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .pagination {
+    display: flex;
+  }
+}
+.active-btn {
+  background-color: var(--color-accent);
+}
+@media (max-width: 767px) and (min-width: 320px) {
+  .our-friends {
+    padding: 70px 0 0;
+  }
+  .our-friends-title {
+    margin-bottom: 0px;
+  }
+  .pets-slider {
+    margin-bottom: 0px;
+  }
+  .pets-content {
+    padding: 42px 0px 42px;
+    row-gap: 42px;
+  }
+
+  .pagination {
+    column-gap: 10px;
+  }
+  .our-friends-title h3 {
+    font-size: 25px;
+  }
 }

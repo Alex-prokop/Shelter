@@ -20,7 +20,7 @@ html {
 .wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* no wrap */
+  flex-wrap: wrap;
   align-items: center;
 }
 :root {
@@ -46,6 +46,10 @@ html {
 }
 @media (max-width: 767px) {
   .wrapper {
+  }
+  .container {
     max-width: 767px;
+    padding: 0 10px;
+    margin: 0 auto;
   }
 }

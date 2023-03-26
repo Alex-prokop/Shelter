@@ -75,6 +75,10 @@
     margin: 0 auto;
   }
   .not-only-img {
+    display: flex;
+    justify-content: end;
+  }
+  .not-only-img img {
     width: 81%;
   }
   .not-only-left-side {
@@ -83,9 +87,29 @@
   .not-only-right-side {
     display: flex;
     justify-content: flex-end;
-    margin: 0 auto;
     padding-top: 102px;
   }
 }
 @media (max-width: 767px) {
+  .not-only {
+    padding-top: 150px;
+  }
+  .not-only-left-side {
+    align-items: center;
+    margin-bottom: 105px;
+  }
+  .not-only-left-side h2 {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  .not-only-left-side p {
+    text-align: center;
+    margin: 42px 0;
+  }
+  .not-only-img {
+    align-self: flex-end;
+    width: 83%;
+    margin: 0 10px 0 50px;
+  }
 }

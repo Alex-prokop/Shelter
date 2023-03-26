@@ -172,107 +172,70 @@ function addCard(arr) {
     petsSliderContainer.append(petsCard);
   }
 }
-//_________________________pogination_______________
-let petsPerPage = {
-  1280: 8,
-  768: 6,
-  0: 3,
-};
 
-function getScreenWidth() {
-  let screenWidth = window.innerWidth;
-  if (screenWidth >= 1280) {
-    return 1280;
-  } else if (screenWidth >= 768) {
-    return 768;
-  } else {
-    return 0;
+// slider
+
+let petsBtnLeft = document.querySelector('.pets-btn-left');
+let petsBtnRight = document.querySelector('.pets-btn-right');
+
+let currentIndex = 0;
+let prevIndex = null;
+let slideCount = 3;
+
+let selectedPets = [];
+let selectedIndexes = [];
+let newPets = [];
+
+function generateCards() {
+  while (selectedPets.length < slideCount) {
+    const randomIndex = Math.floor(Math.random() * pets.length);
+    const randomPet = pets[randomIndex];
+    if (
+      !selectedPets.includes(randomPet) &&
+      !selectedIndexes.includes(randomIndex)
+    ) {
+      selectedPets.push(randomPet);
+      selectedIndexes.push(randomIndex);
+    }
   }
+  while (newPets.length < slideCount) {
+    const randomPet = pets[Math.floor(Math.random() * pets.length)];
+    if (!selectedPets.includes(randomPet) && !newPets.includes(randomPet)) {
+      newPets.push(randomPet);
+    }
+  }
+  addCard(selectedPets);
 }
 
-let currentPage = 1;
-let onePage = petsPerPage[getScreenWidth()];
-let totalPage = 48 / onePage;
+generateCards();
 
-//get random array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+petsBtnRight.addEventListener('click', function () {
+  selectedPets = newPets;
+  newPets = [];
+  slideLeft();
+});
+
+petsBtnLeft.addEventListener('click', function () {
+  selectedPets = newPets;
+  newPets = [];
+  slideRight();
+});
+
+function slideLeft() {
+  document
+    .querySelectorAll('.pets-card')
+    .forEach((card) => card.classList.add('slide-left'));
+
+  setTimeout(function () {
+    generateCards();
+  }, 300);
 }
 
-// array of 48 elements
-let petsArr = [];
-for (let i = 0; i < totalPage; i++) {
-  shuffleArray(pets);
-  petsArr.push(...pets.slice(0, onePage));
+function slideRight() {
+  document
+    .querySelectorAll('.pets-card')
+    .forEach((card) => card.classList.add('slide-right'));
+  setTimeout(function () {
+    generateCards();
+  }, 300);
 }
-
-function createPagination(currentPage, totalPage) {
-  let numberPage = document.querySelector('.number-page');
-  numberPage.innerText = currentPage;
-
-  let btnStart = document.querySelector('.double-left');
-  let btnPrev = document.querySelector('.btn-left');
-  if (currentPage === 1) {
-    btnStart.disabled = true;
-    btnPrev.disabled = true;
-  } else {
-    btnStart.disabled = false;
-    btnPrev.disabled = false;
-  }
-
-  let btnNext = document.querySelector('.btn-right');
-  let btnEnd = document.querySelector('.double-right');
-  if (currentPage === totalPage) {
-    btnNext.disabled = true;
-    btnEnd.disabled = true;
-  } else {
-    btnNext.disabled = false;
-    btnEnd.disabled = false;
-  }
-
-  let start = onePage * (currentPage - 1);
-  let end = start + onePage;
-  let paginatedData = petsArr.slice(start, end);
-  addCard(paginatedData);
-}
-
-// event listeners for pagination buttons
-document.querySelector('.double-left').addEventListener('click', function () {
-  currentPage = 1;
-  createPagination(currentPage, totalPage);
-});
-
-document.querySelector('.btn-right').addEventListener('click', function () {
-  currentPage += 1;
-  createPagination(currentPage, totalPage);
-});
-
-document.querySelector('.btn-left').addEventListener('click', function () {
-  currentPage -= 1;
-  createPagination(currentPage, totalPage);
-});
-
-document.querySelector('.double-right').addEventListener('click', function () {
-  currentPage = totalPage;
-  createPagination(currentPage, totalPage);
-});
-
-// event listener for window resize
-window.addEventListener('resize', function () {
-  onePage = petsPerPage[getScreenWidth()];
-  totalPage = Math.ceil(48 / onePage);
-
-  currentPage = currentPage > totalPage ? totalPage : currentPage;
-  createPagination(currentPage, totalPage);
-});
-
-// initialize the page on load
-window.addEventListener('load', function () {
-  onePage = petsPerPage[getScreenWidth()];
-  totalPage = Math.ceil(48 / onePage);
-  createPagination(currentPage, totalPage);
-});

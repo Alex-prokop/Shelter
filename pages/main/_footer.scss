@@ -4,20 +4,40 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 40px;
-  background: url(noise_lines_transparent@2X.png),
-    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%)
-      #211f20;
+  background: radial-gradient(
+      110.67% 538.64% at 5.73% 50%,
+      #513d2f 0%,
+      #1a1a1c 100%
+    )
+    #211f20;
 }
+.wrapper-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 153px;
+}
+.footer-content-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 163px;
+}
+
 .footer-left,
 .footer-center {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // max-width: 33.4%;
-
   color: var(--color-light-xl);
 }
-
+.footer-left {
+  width: 279px;
+  margin-top: 7px;
+}
+.footer-center {
+  width: 302px;
+}
 .footer-title {
   font-family: 'Georgia';
   font-style: normal;
@@ -28,7 +48,8 @@
   color: var(--color-light-xl);
 }
 
-.footer-contacts {
+.footer-title-center {
+  margin-top: 10px;
 }
 
 .contact-img a {
@@ -38,7 +59,7 @@
   margin: 40px 0;
 }
 .contact-img-center a {
-  gap: 19px;
+  gap: 15px;
 }
 
 .footer-contacts h4 {
@@ -49,4 +70,87 @@
   line-height: 115%;
   letter-spacing: 0.06em;
   color: var(--color-accent);
+}
+@media (max-width: 1279px) and (min-width: 768px) {
+  .footer {
+    max-height: 809px;
+    padding-top: 30px;
+  }
+  .wrapper-footer {
+    justify-content: center;
+    gap: 0px;
+  }
+  .footer-content-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 52px;
+  }
+  .footer-left,
+  .footer-center {
+    // margin-right: 10px;
+  }
+
+  .footer-content-inner {
+  }
+  .footer-right {
+    margin: 0, auto;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 30px;
+  }
+  .wrapper-footer {
+    gap: 0px;
+  }
+  .footer-content-inner {
+    gap: 20px;
+  }
+
+  .footer-left,
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-light-xl);
+  }
+  .footer-center {
+    margin: 0, 60px;
+  }
+  .footer-title {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .footer-contacts {
+  }
+
+  .contact-img a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .contact-img-center a {
+    gap: 19px;
+  }
+
+  .footer-contacts h4 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+  }
+  .footer-content-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-right img {
+    width: 269px;
+    height: 260px;
+  }
 }
