@@ -3,20 +3,22 @@ let burger = document.querySelector('.burger');
 let body = document.querySelector('body');
 let shadow = document.querySelector('shadow');
 
-burger.addEventListener('click', function () {
+burger.addEventListener('click', (evt) => {
+  evt.stopPropagation();
   burger.classList.toggle('active');
   navigation.classList.toggle('active');
-  // shadow.classList.toggle('active');
-});
 
-burger.addEventListener('click', function () {
   burger.style.display = 'block';
-  body.style.overflow = 'hidden';
+  body.style.overflow = burger.classList.contains('active')
+    ? 'hidden'
+    : 'unset';
 });
+document.addEventListener('click', () => {
+  if (!burger.classList.contains('active')) return;
 
-navigation.addEventListener('click', function (event) {
-  if (event.target === burger) {
-    navigation.style.display = 'none';
-    body.style.overflow = 'hiddem';
-  }
+  burger.classList.toggle('active');
+  navigation.classList.toggle('active');
+
+  burger.style.display = 'block';
+  body.style.overflow = 'unset';
 });
